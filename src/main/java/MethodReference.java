@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static java.util.Comparator.comparing;
+
 public class MethodReference {
 
     public interface Predicate<T> {
@@ -33,17 +35,8 @@ public class MethodReference {
     }
 
     public static void main (String [] args) {
-        List<Apple> inventory = new ArrayList<Apple>();
-
         Apple apple = new Apple();
-        apple.setColor("green");
-        apple.setWeight(400);
-        inventory.add(apple);
-
-        apple = new Apple();
-        apple.setColor("green");
-        apple.setWeight(100);
-        inventory.add(apple);
+        List<Apple> inventory = apple.initData();
 
         System.out.println("green :: "+ filterApples(inventory , Apple::isGreenApple));
         System.out.println("green :: "+ filterApples(inventory ,(Apple a) -> "green".equals(a.getColor())));
@@ -54,5 +47,9 @@ public class MethodReference {
         System.out.println("green || heavy :: "+ filterApples(inventory ,(Apple a) -> a.getWeight() > 150 || "green".equals(a.getColor())));
 
         System.out.println("test :: "+ filter(inventory , (Apple a) -> a.getWeight() > 150));
+
+        inventory.sort(comparing(Apple::getWeight));
+        System.out.println (inventory);
+
     }
 }
