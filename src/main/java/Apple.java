@@ -40,6 +40,11 @@ public class Apple {
         this.weight= weight;
         this.color=color;
     }
+
+    public Apple(int weight ) {
+        this.weight= weight;
+    }
+
     public static List<Apple> initData() {
         List <Apple> initData = new ArrayList<Apple>();
         String color = "";
