@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Created by hasun on 17. 5. 13.
  */
-public class Apple {
+public class Apple  {
 
     String color;
     int weight;
@@ -54,7 +54,7 @@ public class Apple {
             }else {
                 color = "green";
             }
-            initData.add(new Apple (num , color));
+            initData.add(new Apple(num , color));
         }
         return initData;
     }

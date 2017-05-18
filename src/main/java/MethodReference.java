@@ -2,10 +2,7 @@
  * Created by hasun on 17. 5. 13.
  */
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
 import java.util.function.Supplier;
@@ -44,6 +41,12 @@ public class MethodReference {
             result.add(f.apply(e));
         }
         return result;
+    }
+
+    static Map<String , FunctionalInterfaces.Function<Integer , Apple>> map = new HashMap<>();
+    static {
+        map.put("apple" , Apple::new);
+        map.put("apple" , Apple::new);
     }
 
 
@@ -92,6 +95,8 @@ public class MethodReference {
 
         Apple a3 =  c4.apply(110 , "green");
         a3 =  c5.apply(110 , "green");
+
+
 
 
     }
